@@ -6,8 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="HelloMaven" />
+        <module name="hellofriend" />
+        <module name="makemaven" />
+        <module name="mavenWeb" />
+        <module name="hellomaven" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mavenParent" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
