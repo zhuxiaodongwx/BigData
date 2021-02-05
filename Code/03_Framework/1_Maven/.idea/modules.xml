@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hellofriend/hellofriend.iml" filepath="$PROJECT_DIR$/hellofriend/hellofriend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hellomaven/hellomaven.iml" filepath="$PROJECT_DIR$/hellomaven/hellomaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/makemaven/makemaven.iml" filepath="$PROJECT_DIR$/makemaven/makemaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavenWeb/mavenWeb.iml" filepath="$PROJECT_DIR$/mavenWeb/mavenWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavenParent/mavenparent.iml" filepath="$PROJECT_DIR$/mavenParent/mavenparent.iml" />
+    </modules>
+  </component>
+</project>

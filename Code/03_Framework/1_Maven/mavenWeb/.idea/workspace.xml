@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:github" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e40624be-3ba3-4998-aba3-7457c99b57db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../HelloMaven/.idea/hellomaven.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloMaven/.idea/hellomaven.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mavenWeb.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/02_JavaWeb/Docker/Docker知识点.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/02_JavaWeb/K8S/kubernetes(k8s)课程.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/01_Maven/Maven知识体系结构.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/01_Maven/尚硅谷大数据技术之Maven.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/02_Linux/Linux就该这么学 2020-09-09.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/02_Linux/Linux知识结构_小东.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/02_Linux/尚硅谷大数据技术之Linux.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/02_Linux/尚硅谷大数据技术之Linux（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/03_MySQL高级/尚硅谷大数据技术之MySQL高级.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/03_MySQL高级/尚硅谷大数据技术之MySQL高级（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/04_Shell/Linux命令行与shell脚本编程大全  第3版  ,布鲁姆 ,P606.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/04_Shell/尚硅谷大数据技术之Shell.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/04_Shell/尚硅谷大数据技术之Shell（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/01_Hadoop入门.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/02_HDFS文件系统.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/03_MapReduce.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/04_Hadoop总结.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/尚硅谷大数据技术之Hadoop（HDFS）V3.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/尚硅谷大数据技术之Hadoop（MapReduce&amp;Yarn）V3.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/尚硅谷大数据技术之Hadoop（优化&amp;新特性）V3.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/05_Hadoop/尚硅谷大数据技术之Hadoop（入门）V3.0.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/06_Zookeeper/Zookeeper.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/06_Zookeeper/尚硅谷大数据技术之Zookeeper（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/08_hive/Hive思维导图.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/08_hive/Hive总结.mmap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/08_hive/尚硅谷大数据技术之Hive（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/09_flume/尚硅谷大数据技术之Flume（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/10_kafka/尚硅谷大数据技术之Kafka（V3.0）.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/03_ComputingFramework/11_Hbase/尚硅谷大数据技术之HBase.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Document/学习计划进度.xlsx" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\DevelopTools\MavenRepository" />
+        <option name="mavenHome" value="C:\Develop\IDE\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
+        <option name="userSettingsFile" value="C:\Develop\Java\apache-maven-3.2.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadAnnotationsAutomatically" value="true" />
+        <option name="downloadDocsAutomatically" value="true" />
+        <option name="downloadSourcesAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1kqOZ2dEWi7mDeK8kPbVZ6Ce04m" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e40624be-3ba3-4998-aba3-7457c99b57db" name="Default Changelist" comment="" />
+      <created>1606424708284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606424708284</updated>
+      <workItem from="1606424709407" duration="49000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="894" y="455" key="SettingsEditor" timestamp="1606424748410">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="894" y="455" key="SettingsEditor/-1920.336.1920.1040/2560.-646.1440.2520/0.0.2560.1400@0.0.2560.1400" timestamp="1606424748410" />
+  </component>
+</project>
