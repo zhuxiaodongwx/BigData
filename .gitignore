@@ -1,6 +1,15 @@
+# idea临时文件
 $CACHE_FILE$
+
+# 编译文件
+target/
+
+# office、MindManager临时文件
 *.~$lock
-*.class
 ~$*.docx
 ~$*.xlsx
+
+# 学习计划文档
 Project
+
+
