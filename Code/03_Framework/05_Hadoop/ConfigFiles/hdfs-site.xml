@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	<!-- 2NN配置 -->
+    <property>
+        <name>dfs.namenode.secondary.http-address</name>
+        <value>hadoop104:9868</value>
+    </property>
+
+	<!-- DataNode超时时间配置，单位：毫秒-->
+	<property>
+		<name>dfs.namenode.heartbeat.recheck-interval</name>
+		<value>300000</value>
+	</property>
+	<!-- DataNode心跳检查时间，单位：秒-->
+	<property>
+		<name>dfs.heartbeat.interval</name>
+		<value>3</value>
+	</property>
+
+	<!-- 白名单文件设置 -->
+	<property>
+		 <name>dfs.hosts</name>
+		 <value>/opt/module/hadoop-3.1.3/etc/hadoop/dfs.hosts</value>
+	</property>
+
+	<!-- 黑名单文件设置 -->
+	<property>
+		 <name>dfs.hosts.exclude</name>
+		 <value>/opt/module/hadoop-3.1.3/etc/hadoop/dfs.hosts.exclude</value>
+	</property>
+
+	<!-- DataNode多目录配置 -->
+	<!--
+	<property>
+			<name>dfs.datanode.data.dir</name>
+	<value>file:///${hadoop.tmp.dir}/dfs/data1,file:///${hadoop.tmp.dir}/dfs/data2</value>
+	</property>
+	-->
+</configuration>
