@@ -38,6 +38,7 @@
         <name>hadoop.proxyuser.atguigu.groups</name>
         <value>*</value>
     </property>
+	<!-- 网页端访问HDFS，默认用户 -->
     <property>
         <name>hadoop.http.staticuser.user</name>
         <value>atguigu</value>

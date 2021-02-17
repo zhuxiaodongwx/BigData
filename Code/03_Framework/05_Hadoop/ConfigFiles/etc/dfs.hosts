@@ -1,0 +1,4 @@
+# Hadoop白名单，白名单中的机器，允许方法NameNode
+hadoop102
+hadoop103
+hadoop104
