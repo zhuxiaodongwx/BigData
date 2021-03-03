@@ -1,4 +1,4 @@
-package com.atguigu.mapreduce.phoneFlow;
+package com.xiaodong.mapreduce.phoneFlow;
 
 import org.apache.hadoop.io.Writable;
 
@@ -52,6 +52,7 @@ public class FlowSum implements Writable {
      * @param out
      * @throws IOException
      */
+    @Override
     public void write(DataOutput out) throws IOException {
         out.writeLong(upFlow);
         out.writeLong(downFlow);
@@ -64,6 +65,7 @@ public class FlowSum implements Writable {
      * @param in
      * @throws IOException
      */
+    @Override
     public void readFields(DataInput in) throws IOException {
         this.upFlow = in.readLong();
         this.downFlow = in.readLong();

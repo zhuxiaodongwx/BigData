@@ -1,11 +1,7 @@
-package com.atguigu.mapreduce.phoneFlow;
+package com.xiaodong.mapreduce.phoneFlow;
 
-import com.atguigu.mapreduce.wordCount.WordCountDriver;
-import com.atguigu.mapreduce.wordCount.WordCountMapper;
-import com.atguigu.mapreduce.wordCount.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;

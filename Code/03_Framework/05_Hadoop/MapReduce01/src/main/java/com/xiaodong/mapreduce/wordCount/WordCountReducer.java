@@ -1,10 +1,12 @@
-package com.atguigu.mapreduce.wordCount;
+package com.xiaodong.mapreduce.wordCount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * @description:
@@ -12,6 +14,8 @@ import java.io.IOException;
  * @create: 2021-02-16 11:44
  **/
 public class WordCountReducer extends Reducer<Text, IntWritable,Text,IntWritable> {
+
+    private HashMap<String , List<Integer>> map = new HashMap<>();
 
     @Override
     protected void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
