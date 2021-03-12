@@ -15,3 +15,5 @@
    <http://www.atguigu.com/bigdata_video.shtml#bigdata>
 
 3. 本仓库仅仅是为了督促自己学习，以及展示学习成果。
+
+4. 本仓库依赖于LFS托管文档类文件。
