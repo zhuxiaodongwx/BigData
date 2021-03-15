@@ -1,0 +1,2 @@
+xiaodong	ls	cd
+xiaoxi	ls2	cd2
