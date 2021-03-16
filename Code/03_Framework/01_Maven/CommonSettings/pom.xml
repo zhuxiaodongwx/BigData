@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.xiaodong.maven</groupId>
+    <artifactId>mavenparent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+	<!-- 父项目的打包类型，必须声明为pom -->
+	<!--
+    <packaging>pom</packaging>
+	-->
+	<!-- java web项目的打包类型 -->
+	<packaging>war</packaging>
+
+
+    <!-- 子项目中，声明依赖的父项目 -->
+    <parent>
+        <groupId>cn.xiaodong.maven</groupId>
+        <artifactId>mavenparent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../mavenParent/pom.xml</relativePath>
+    </parent>
+
+    <!--项目聚合-->
+    <modules>
+        <module>../hellofriend</module>
+        <module>../hellomaven</module>
+    </modules>
+
+    <!--统一管理当前模块的jar包的版本-->
+    <properties>
+        <spring.version>4.1.0.RELEASE</spring.version>
+    </properties>
+
+
+    <dependencies>
+        
+		<!-- 直接声明项目的依赖 -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0</version>
+        </dependency>
+		
+		<!-- 子工程继承父工程的依赖 -->
+		<!-- part 2、子工程中的依赖设置 -->
+		<!-- 不写版本号，就从父工程中继承，写版本号就使用子项目自己的 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+
+        <!--Spring配置化-->
+        <!--统一管理当前模块的jar包的版本-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+		
+		
+		<!--依赖于另一个项目，并排除部分依赖 start -->
+        <dependency>
+            <!-- 声明依赖排除的项目 -->
+            <groupId>cn.xiaodong.maven</groupId>
+            <artifactId>hellofriend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+
+            <!--声明依赖排除的jar包坐标-->
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--依赖于另一个项目，并排除部分依赖 start-->
+    </dependencies>
+
+	<!-- 子工程继承父工程的依赖 -->
+    <!-- part 1、父工程中的依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+	<!--JavaWeb项目个性化设置-->
+    <build>
+		<!--项目war包打包后的名字-->
+		<!--没有设置这个属性，war包的名字默认artifactid + version-->
+        <finalName>mavenWeb</finalName>
+		
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <!--配置web.xml的地址-->
+                    <webXml>web\WEB-INF\web.xml</webXml>
+
+                    <!-- 设置WebContent目录为Web目录 -->
+                    <webappDirectory>${basedir}/web</webappDirectory>
+                    <warSourceDirectory>${basedir}/web</warSourceDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
