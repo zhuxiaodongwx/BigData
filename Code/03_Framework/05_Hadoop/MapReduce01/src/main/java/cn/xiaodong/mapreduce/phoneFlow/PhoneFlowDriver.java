@@ -1,4 +1,4 @@
-package com.xiaodong.mapreduce.phoneFlow;
+package cn.xiaodong.mapreduce.phoneFlow;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

@@ -1,4 +1,4 @@
-package com.xiaodong.hdfs;
+package cn.xiaodong.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;

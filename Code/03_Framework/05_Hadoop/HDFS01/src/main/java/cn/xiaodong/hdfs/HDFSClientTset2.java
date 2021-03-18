@@ -1,7 +1,13 @@
-package com.xiaodong.hdfs;
+package cn.xiaodong.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.*;
+import org.apache.hadoop.fs.BlockLocation;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.LocatedFileStatus;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.RemoteIterator;
 import org.apache.hadoop.io.IOUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -97,12 +103,12 @@ public class HDFSClientTset2 {
 
         while (locatedFileStatusRemoteIterator.hasNext()) {
             LocatedFileStatus fileStatus = locatedFileStatusRemoteIterator.next();
-            System.out.println("文件名称:"+fileStatus.getPath());
+            System.out.println("文件名称:" + fileStatus.getPath());
             // 文件块信息
             BlockLocation[] blockLocations = fileStatus.getBlockLocations();
             for (BlockLocation blockLocation : blockLocations) {
-                int i= 1;
-                System.out.print("第"+i+"块 :");
+                int i = 1;
+                System.out.print("第" + i + "块 :");
                 System.out.print("host：" + arraysToString(blockLocation.getHosts()));
                 System.out.println();
                 i++;
@@ -112,6 +118,7 @@ public class HDFSClientTset2 {
 
     /**
      * 字符串数组打印
+     *
      * @param array
      * @return
      */

@@ -1,10 +1,9 @@
-package com.xiaodong.mapreduce.wordCount;
+package cn.xiaodong.demo.wordCount;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -36,9 +35,10 @@ public class WordCountDriver {
         job.setReducerClass(WordCountReducer.class);
 
         // 3.设置map、reduce的输出
+        // mapper的输出格式
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
-
+        // reducer的输出格式
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
@@ -48,6 +48,7 @@ public class WordCountDriver {
 
         // 5.任务提交
         boolean result = job.waitForCompletion(true);
+
         System.exit(result ? 0 : 1);
     }
 }

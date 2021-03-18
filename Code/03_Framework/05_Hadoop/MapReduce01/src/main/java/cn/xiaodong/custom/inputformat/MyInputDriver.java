@@ -1,4 +1,4 @@
-package com.atguigu.inputformat;
+package cn.xiaodong.custom.inputformat;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

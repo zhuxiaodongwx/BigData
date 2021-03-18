@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/ConfigFiles/ConfigFiles.iml" filepath="$PROJECT_DIR$/ConfigFiles/ConfigFiles.iml" />
       <module fileurl="file://$PROJECT_DIR$/HDFS01/HDFS01.iml" filepath="$PROJECT_DIR$/HDFS01/HDFS01.iml" />
       <module fileurl="file://$PROJECT_DIR$/MapReduce01/MapReduce01.iml" filepath="$PROJECT_DIR$/MapReduce01/MapReduce01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" filepath="$PROJECT_DIR$/MapReduceDemo/MapReduceDemo.iml" />
     </modules>
   </component>
 </project>

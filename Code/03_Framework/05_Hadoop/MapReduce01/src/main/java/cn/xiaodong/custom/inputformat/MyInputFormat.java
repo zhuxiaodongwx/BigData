@@ -1,4 +1,4 @@
-package com.atguigu.inputformat;
+package cn.xiaodong.custom.inputformat;
 
 import org.apache.hadoop.io.BytesWritable;
 import org.apache.hadoop.io.Text;

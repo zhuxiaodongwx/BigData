@@ -8,11 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="MapReduce01" />
         <module name="HDFS01" />
+        <module name="MapReduceDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HDFS01" target="8" />
       <module name="MapReduce01" target="8" />
+      <module name="MapReduceDemo" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

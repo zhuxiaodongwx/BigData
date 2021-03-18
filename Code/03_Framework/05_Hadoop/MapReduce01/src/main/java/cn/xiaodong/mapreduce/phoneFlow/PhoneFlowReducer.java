@@ -1,4 +1,4 @@
-package com.xiaodong.mapreduce.phoneFlow;
+package cn.xiaodong.mapreduce.phoneFlow;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;

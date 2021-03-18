@@ -1,4 +1,4 @@
-package com.xiaodong.mapreduce.wordCount;
+package cn.xiaodong.demo.wordCount;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @description:
+ * @description:单词计数reducer处理
  * @author: xiaodong
  * @create: 2021-02-16 11:44
  **/

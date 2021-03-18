@@ -1,4 +1,4 @@
-package com.atguigu.inputformat;
+package cn.xiaodong.custom.inputformat;
 
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
