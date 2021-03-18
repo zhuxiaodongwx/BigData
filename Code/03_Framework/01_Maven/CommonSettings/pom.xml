@@ -29,9 +29,14 @@
         <module>../hellomaven</module>
     </modules>
 
-    <!--统一管理当前模块的jar包的版本-->
+   
     <properties>
+		<!--统一管理当前模块的jar包的版本-->
         <spring.version>4.1.0.RELEASE</spring.version>
+		
+		<!--指定JDK版本-->
+		<java.version>8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 
@@ -107,13 +112,14 @@
         </dependencies>
     </dependencyManagement>
 
-	<!--JavaWeb项目个性化设置-->
+	
     <build>
 		<!--项目war包打包后的名字-->
 		<!--没有设置这个属性，war包的名字默认artifactid + version-->
         <finalName>mavenWeb</finalName>
 		
         <plugins>
+			<!--JavaWeb项目个性化设置-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -125,6 +131,19 @@
                     <!-- 设置WebContent目录为Web目录 -->
                     <webappDirectory>${basedir}/web</webappDirectory>
                     <warSourceDirectory>${basedir}/web</warSourceDirectory>
+                </configuration>
+            </plugin>
+			
+			<!--指定JDK版本-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <skip>true</skip>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
         </plugins>
