@@ -27,12 +27,12 @@ public class PhoneFlowDriver {
         // configuration.set("fs.defaultFS", "file:///");
 
         // 此处写local表示程序在本地上运行，可以进行断点调试
-        configuration.set("mapreduce.framework.name","local");
-        // 此处写yarn表示程序在集群上运行，yarn负责调度
+        configuration.set("mapreduce.framework.name", "local");
+        // 此处写yarn表示程序在集群上运行，yarn负责调度，无法进行断点调试
         // configuration.set("mapreduce.framework.name","yarn");
 
-        configuration.set("mapreduce.app-submission.cross-platform","true");
-        configuration.set("yarn.resourcemanager.hostname","hadoop103");
+        configuration.set("mapreduce.app-submission.cross-platform", "true");
+        configuration.set("yarn.resourcemanager.hostname", "hadoop103");
 
         // 1.获取Job
         Job job = Job.getInstance(configuration);

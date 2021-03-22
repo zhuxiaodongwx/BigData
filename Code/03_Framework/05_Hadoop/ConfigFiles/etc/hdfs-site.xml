@@ -23,6 +23,12 @@
         <value>hadoop104:9868</value>
     </property>
 
+	<!-- HDFS文件块的大小，hadoop2.x默认是128M -->
+	<property>
+		<name>dfs.blockSize</name>
+		<value>128m</value>
+	</property>
+
 	<!-- DataNode超时时间配置，单位：毫秒-->
 	<property>
 		<name>dfs.namenode.heartbeat.recheck-interval</name>

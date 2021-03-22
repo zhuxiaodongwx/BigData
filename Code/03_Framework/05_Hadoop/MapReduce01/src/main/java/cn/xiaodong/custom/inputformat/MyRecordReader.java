@@ -47,6 +47,16 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
     }
 
     /**
+     * 关闭方法，一般用来关闭资源
+     * @throws IOException
+     */
+    @Override
+    public void close() throws IOException {
+        //关流
+        IOUtils.closeStream(inputStream);
+    }
+
+    /**
      * 读取下一组Key Value Pair
      * @return 是否读到
      * @throws IOException
@@ -107,13 +117,5 @@ public class MyRecordReader extends RecordReader<Text, BytesWritable> {
         return isRead ? 1 : 0;
     }
 
-    /**
-     * 关闭方法，一般用来关闭资源
-     * @throws IOException
-     */
-    @Override
-    public void close() throws IOException {
-        //关流
-        IOUtils.closeStream(inputStream);
-    }
+
 }

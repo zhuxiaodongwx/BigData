@@ -9,6 +9,12 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 
 import java.io.IOException;
 
+/**
+ * 自定义InputFormat
+ *
+ * 继承了FileInputFormat，FileInputFormat已经实现了getSplits()切片方法
+ * 本类只实现createRecordReader方法即可
+ */
 public class MyInputFormat extends FileInputFormat<Text, BytesWritable> {
 
     /**
