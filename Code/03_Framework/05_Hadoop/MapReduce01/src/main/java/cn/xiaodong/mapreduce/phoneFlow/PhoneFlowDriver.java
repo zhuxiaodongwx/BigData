@@ -44,6 +44,11 @@ public class PhoneFlowDriver {
         job.setMapperClass(PhoneFlowMapper.class);
         job.setReducerClass(PhoneFlowReducer.class);
 
+        // 设置mapTask的数量
+        job.setNumReduceTasks(5);
+        // 指定分区策略
+        job.setPartitionerClass(MyPartitioner.class);
+
         // 3.设置map、reduce的输出
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(FlowSum.class);
