@@ -17,7 +17,8 @@ public class PhoneFlowReducer extends Reducer<FlowSum, Text, Text, FlowSum> {
     @Override
     protected void reduce(FlowSum key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 
-        for (Text value :values){
+        // 手机号循环输出，防止出现不同的手机号流量数据完全相同的情况
+        for (Text value : values) {
             // 手机号
             phoneNumber = value;
 
