@@ -40,13 +40,13 @@ public class HDFSClientTset {
         // 测试设置
         Configuration configuration = new Configuration();
         // 设置文件的副本数
-        configuration.set("dfs.replication","2");
+        configuration.set("dfs.replication","3");
 
         // 1.新建HDFS对象
         FileSystem fileSystem = FileSystem.get(URI.create("hdfs://hadoop102:8020"), configuration, "atguigu");
 
         // 2、操作集群
-        fileSystem.copyFromLocalFile(new Path("D:\\Users\\XiaoDong\\Downloads\\YoudaoDictSetup.exe"), new Path("/test"));
+        fileSystem.copyFromLocalFile(new Path("C:\\Users\\XiaoDong\\Downloads\\AMD-Ryzen-Master.exe"), new Path("/test"));
 
         // 3、关闭资源
         fileSystem.close();

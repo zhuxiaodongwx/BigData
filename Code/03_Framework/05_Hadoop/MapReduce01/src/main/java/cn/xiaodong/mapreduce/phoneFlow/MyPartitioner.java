@@ -20,6 +20,7 @@ public class MyPartitioner extends Partitioner<Text, FlowSum> {
      */
     @Override
     public int getPartition(Text text, FlowSum flowSum, int numPartitions) {
+
         // 手机号前三位
         String phone_head = text.toString().substring(0, 3);
         switch (phone_head) {

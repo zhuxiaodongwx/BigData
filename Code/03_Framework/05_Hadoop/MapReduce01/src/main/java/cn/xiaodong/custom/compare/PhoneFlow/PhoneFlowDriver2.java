@@ -1,9 +1,8 @@
-package cn.xiaodong.mapreduce.phoneFlow;
+package cn.xiaodong.custom.compare.PhoneFlow;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -11,11 +10,11 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * @description: 任务驱动
+ * @description: 汇总后的手机流量降序排列(通过自定义排序比较器实现)
  * @author: xiaodong
  * @create: 2021-02-16 18:02
  **/
-public class PhoneFlowDriver {
+public class PhoneFlowDriver2 {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         // 设置连接Hadoop的用户名
@@ -47,24 +46,24 @@ public class PhoneFlowDriver {
         job.setMapperClass(PhoneFlowMapper.class);
         job.setReducerClass(PhoneFlowReducer.class);
 
-//        // 默认排序比较器
-//        job.setSortComparatorClass(WritableComparator.class);
-//
+        // 自定义排序比较器
+        job.setSortComparatorClass(FlowSumSortComparator.class);
+
 //        // 设置mapTask的数量
 //        job.setNumReduceTasks(5);
 //        // 指定分区策略
 //        job.setPartitionerClass(MyPartitioner.class);
 
         // 3.设置map、reduce的输出
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FlowSum.class);
+        job.setMapOutputKeyClass(FlowSum.class);
+        job.setMapOutputValueClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowSum.class);
 
         // 4、设置文件输入输出路径
-        FileInputFormat.setInputPaths(job, new Path("/txt/phoneData.txt"));
-        FileOutputFormat.setOutputPath(job, new Path("/txt/phoneData"));
+        FileInputFormat.setInputPaths(job, new Path("/txt/phoneDataSum.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("/txt/phoneDataSum"));
 
         // 5.任务提交
         boolean result = job.waitForCompletion(true);

@@ -1,9 +1,8 @@
-package cn.xiaodong.mapreduce.phoneFlow;
+package cn.xiaodong.custom.compare.PhoneFlow;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -11,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * @description: 任务驱动
+ * @description: 汇总后的手机流量降序排列（bean添加排序方法实现）
  * @author: xiaodong
  * @create: 2021-02-16 18:02
  **/
@@ -56,15 +55,15 @@ public class PhoneFlowDriver {
 //        job.setPartitionerClass(MyPartitioner.class);
 
         // 3.设置map、reduce的输出
-        job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(FlowSum.class);
+        job.setMapOutputKeyClass(FlowSum.class);
+        job.setMapOutputValueClass(Text.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowSum.class);
 
         // 4、设置文件输入输出路径
-        FileInputFormat.setInputPaths(job, new Path("/txt/phoneData.txt"));
-        FileOutputFormat.setOutputPath(job, new Path("/txt/phoneData"));
+        FileInputFormat.setInputPaths(job, new Path("/txt/phoneDataSum.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("/txt/phoneDataSum"));
 
         // 5.任务提交
         boolean result = job.waitForCompletion(true);
