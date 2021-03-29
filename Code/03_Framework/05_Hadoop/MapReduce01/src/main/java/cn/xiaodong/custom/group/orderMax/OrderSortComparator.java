@@ -1,20 +1,20 @@
-package cn.xiaodong.custom.compare.PhoneFlow;
+package cn.xiaodong.custom.group.orderMax;
 
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
 /**
- * @description: FlowSum类作为Key专用的比较器
+ * @description: 分组比较器
  * @author: xiaodong
  * @create: 2021-03-29 00:47
  **/
-public class FlowSumSortComparator extends WritableComparator {
+public class OrderSortComparator extends WritableComparator {
 
     /**
      * 自定义排序方法，需要一个默认的无参构造方法，否则框架初始化会报错
      */
-    protected FlowSumSortComparator() {
-        super(FlowSum.class, true);
+    protected OrderSortComparator() {
+        super(OrderBean.class, true);
     }
 
     /**
@@ -25,9 +25,9 @@ public class FlowSumSortComparator extends WritableComparator {
      */
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        FlowSum fsa = (FlowSum) a;
-        FlowSum fsb = (FlowSum) b;
+        OrderBean oba = (OrderBean) a;
+        OrderBean obb = (OrderBean) b;
 
-        return Long.compare(fsa.getSumFlow(), fsb.getSumFlow());
+        return oba.getOrderId().compareTo(obb.getOrderId());
     }
 }
