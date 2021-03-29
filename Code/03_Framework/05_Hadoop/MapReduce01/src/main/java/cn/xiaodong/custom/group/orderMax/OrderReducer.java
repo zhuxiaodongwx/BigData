@@ -15,8 +15,8 @@ public class OrderReducer extends Reducer<OrderBean, NullWritable, OrderBean, Nu
 
     @Override
     protected void reduce(OrderBean key, Iterable<NullWritable> values, Context context) throws IOException, InterruptedException {
-        // 获取价格最贵的商品
-        context.write(key, values.iterator().next());
+//        // 获取价格最贵的商品
+//        context.write(key, values.iterator().next());
 
         Iterator<NullWritable> iterator = values.iterator();
         int i = 0;
