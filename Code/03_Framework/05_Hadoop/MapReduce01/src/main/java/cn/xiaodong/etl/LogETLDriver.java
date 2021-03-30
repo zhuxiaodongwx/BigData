@@ -1,4 +1,4 @@
-package cn.xiaodong.join.mapJoin;
+package cn.xiaodong.etl;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -9,14 +9,13 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
-import java.net.URI;
 
 /**
- * @description: ReduceJoin驱动类
+ * @description: etl日志清洗
  * @author: xiaodong
  * @create: 2021-03-30 06:33
  **/
-public class OrderMapJoinDriver {
+public class LogETLDriver {
 
     /**
      * 设置任务属性
@@ -53,7 +52,7 @@ public class OrderMapJoinDriver {
 //        job.setJarByClass(WordCountDriver.class);
         job.setJar("D:\\Code\\LearningBigData\\Code\\03_Framework\\05_Hadoop\\MapReduce01\\target\\MapReduce01-1.0-SNAPSHOT.jar");
 
-        job.setMapperClass(OrderMapper.class);
+        job.setMapperClass(LogMapper.class);
         job.setNumReduceTasks(0);
 
         // 添加分布式缓存文件
@@ -67,8 +66,8 @@ public class OrderMapJoinDriver {
         job.setMapOutputValueClass(NullWritable.class);
 
         // 4、设置文件输入输出路径
-        FileInputFormat.setInputPaths(job, new Path("/txt/reduceJoin/order.txt"));
-        FileOutputFormat.setOutputPath(job, new Path("/txt/reduceJoinOutput"));
+        FileInputFormat.setInputPaths(job, new Path("/txt/web.log"));
+        FileOutputFormat.setOutputPath(job, new Path("/txt/WebLogOutput"));
 
         // 5.任务提交
         boolean result = job.waitForCompletion(true);

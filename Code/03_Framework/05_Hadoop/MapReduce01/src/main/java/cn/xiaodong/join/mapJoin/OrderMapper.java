@@ -5,6 +5,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IOUtils;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
@@ -38,13 +39,12 @@ public class OrderMapper extends Mapper<LongWritable, Text, Text, NullWritable> 
     @Override
     protected void setup(Context context) throws IOException, InterruptedException {
         // 获取分布式缓存文件
-        // URI[] cacheArchives = context.getCacheArchives();
+         URI[] cacheFiles = context.getCacheFiles();
 
         // 开文件流
         Configuration conf;
         FileSystem fileSystem = FileSystem.get(context.getConfiguration());
-//        FSDataInputStream fsDataInputStream = fileSystem.open(new Path(cacheArchives[0]));
-        FSDataInputStream fsDataInputStream = fileSystem.open(new Path("/txt/reduceJoin/pd.txt"));
+        FSDataInputStream fsDataInputStream = fileSystem.open(new Path(cacheFiles[0]));
 
         // 将hdfs数据流转换成缓存字符流
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(fsDataInputStream));
@@ -53,6 +53,8 @@ public class OrderMapper extends Mapper<LongWritable, Text, Text, NullWritable> 
             String[] split = line.split("\t");
             product.put(split[0], split[1]);
         }
+
+        IOUtils.closeStream(bufferedReader);
 
     }
 
