@@ -18,5 +18,10 @@ ssh hadoop103 "yarn --daemon start timelineserver"
 echo "==========     启动historyServer     =========="
 ssh hadoop102 "mapred --daemon start historyserver"
 
+echo "==========     启动Zookper     =========="
+ssh hadoop102 "zkServer.sh start"
+ssh hadoop103 "zkServer.sh start"
+ssh hadoop104 "zkServer.sh start"
+
 echo "==========     启动结果     =========="
 ssh hadoop102 "jpsall"

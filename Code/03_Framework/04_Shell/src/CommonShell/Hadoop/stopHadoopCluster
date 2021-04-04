@@ -6,6 +6,11 @@
 # 1、集群之间需要配置ssh免密登录
 # 2、网络名称已经修改，并且配置好host解析
 
+echo "==========     启动Zookper     =========="
+ssh hadoop102 "zkServer.sh stop"
+ssh hadoop103 "zkServer.sh stop"
+ssh hadoop104 "zkServer.sh stop"
+
 echo "==========     停止timeLineServer     =========="
 ssh hadoop103 "yarn --daemon stop timelineserver"
 
