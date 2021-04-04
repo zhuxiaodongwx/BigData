@@ -17,7 +17,7 @@ public class WordCountFileMaker {
      * 文件行数
      * 1亿行，最终生成文件约10GB
      */
-    private static int fileLineNumber = 100000000;
+    private static int fileLineNumber = 10000000;
 
     /**
      * 文件列数（每一行有几个单词）
@@ -29,7 +29,7 @@ public class WordCountFileMaker {
 
     public static void main(String[] args) {
         try {
-            FileWriter fileWriter = new FileWriter("D:/tmp/wordCount.txt");
+            FileWriter fileWriter = new FileWriter("D:/tmp/wordCount2.txt");
             BufferedWriter out = new BufferedWriter(fileWriter);
 
             for (int i = 0; i <= fileLineNumber; i++) {
