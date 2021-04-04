@@ -14,7 +14,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import java.io.IOException;
 
 /**
- * @description: wordcount自定义combiner
+ * @description:  测试mapreduce压缩
  * @author: xiaodong
  * @create: 2021-02-16 11:35
  **/
@@ -59,7 +59,6 @@ public class WordCountDriver {
         configuration.setClass("mapreduce.output.fileoutputformat.compress.codec", GzipCodec.class, CompressionCodec.class);
 
 
-
         // 1.获取Job
         Job job = Job.getInstance(configuration);
 
@@ -70,6 +69,8 @@ public class WordCountDriver {
         job.setMapperClass(WordCountMapper.class);
         job.setReducerClass(WordCountReducer.class);
 
+        // 合并策略
+        job.setCombinerClass(WordCountReducer.class);
 
         // 3.设置map、reduce的输出
         // mapper的输出格式
@@ -82,7 +83,7 @@ public class WordCountDriver {
         // 4、设置文件输入输出路径
         // hadoop可以自动识别输入文件是否是压缩文件，并自动进行解压
         FileInputFormat.setInputPaths(job, new Path("/txt/compress/wordCount.gz"));
-        FileOutputFormat.setOutputPath(job, new Path("/txt/compress/wordCountOutput"));
+        FileOutputFormat.setOutputPath(job, new Path("/txt/wordCountOutput2"));
 
         // 5.任务提交
         boolean result = job.waitForCompletion(true);

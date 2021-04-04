@@ -15,8 +15,9 @@ public class WordCountFileMaker {
 
     /**
      * 文件行数
+     * 1亿行，最终生成文件约10GB
      */
-    private static int fileLineNumber = 5000000;
+    private static int fileLineNumber = 100000000;
 
     /**
      * 文件列数（每一行有几个单词）
