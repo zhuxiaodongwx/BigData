@@ -1,0 +1,13 @@
+# Hadoop HA初始化步骤
+
+1. 格式化nn
+    a. 启动QJM集群  sbin/hadoop-daemons.sh start journalnode
+    b. 格式化
+        102 格式化  bin/hdfs namenode -format
+        102 启动nn  sbin/hadoop-daemon.sh start namenode
+        103 同步    bin/hdfs namenode -bootstrapStandby
+        103 启动nn  sbin/hadoop-daemon.sh start namenode
+2. 格式化zk
+    a. 启动zk
+    b. 格式化zk     bin/hdfs zkfc -formatZK
+3. 启动集群         sbin/start-all.sh
