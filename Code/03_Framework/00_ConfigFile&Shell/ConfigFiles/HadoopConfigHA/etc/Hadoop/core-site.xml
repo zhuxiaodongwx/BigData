@@ -30,6 +30,12 @@
         <value>/opt/ha/hadoop-3.1.3/data</value>
     </property>
 
+    <!--    Zookeeper集群连接地址-->
+    <property>
+        <name>ha.zookeeper.quorum</name>
+        <value>hadoop102:2181,hadoop103:2181,hadoop104:2181</value>
+    </property>
+
 
     <property>
         <name>hadoop.proxyuser.atguigu.hosts</name>

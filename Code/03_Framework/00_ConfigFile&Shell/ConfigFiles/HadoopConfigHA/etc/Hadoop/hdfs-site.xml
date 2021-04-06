@@ -90,6 +90,12 @@
         <value>/home/atguigu/.ssh/id_rsa</value>
     </property>
 
+    <!--    HDFS HA 自动故障转移-->
+    <property>
+        <name>dfs.ha.automatic-failover.enabled</name>
+        <value>true</value>
+    </property>
+
 
     <!-- 2NN配置(Hadoop HA集群，配置了三个NN，2NN不需要了) -->
     <!--

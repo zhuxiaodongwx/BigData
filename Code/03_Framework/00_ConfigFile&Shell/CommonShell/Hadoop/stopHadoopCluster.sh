@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 关闭Hadoop集群
+# 关闭Hadoop集群(HDFS+Yarn+Zookeeper)
 
 # 前提：
 # 1、集群之间需要配置ssh免密登录
