@@ -18,7 +18,14 @@
 
 <configuration>
 
+    <!--	HDFS HA集群配置  start  -->
     <!-- NameNode配置 -->
+    <!--
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://hadoop102:8020</value>
+    </property>
+    -->
     <property>
         <name>fs.defaultFS</name>
         <value>hdfs://mycluster</value>
@@ -36,6 +43,7 @@
         <value>hadoop102:2181,hadoop103:2181,hadoop104:2181</value>
     </property>
 
+    <!--	HDFS HA集群配置  end  -->
 
     <property>
         <name>hadoop.proxyuser.atguigu.hosts</name>

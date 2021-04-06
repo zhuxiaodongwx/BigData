@@ -28,6 +28,8 @@
         <value>file://${hadoop.data.dir}/data</value>
     </property>
 
+    <!--	HDFS HA集群配置  start  -->
+
     <!--	hadoop nameService-->
     <property>
         <name>dfs.nameservices</name>
@@ -104,6 +106,8 @@
         <value>hadoop104:9868</value>
     </property>
     -->
+
+    <!--	HDFS HA集群配置  end  -->
 
     <!-- HDFS文件块的大小，hadoop2.x默认是128M -->
     <property>
