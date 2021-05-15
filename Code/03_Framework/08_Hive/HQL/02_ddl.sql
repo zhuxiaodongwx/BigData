@@ -105,8 +105,3 @@ show partitions stu_par2;
 -- 直接将数据load到进的分区
 load data local inpath '/opt/module/datas/student.txt' into table stu_par2 partition (grade ='01',class = '01');
 load data local inpath '/opt/module/datas/student.txt' into table stu_par2 partition (class = '02',grade ='02');
-
---用查询结果建表
-create table stu_par4
-    as select * from stu_par;
-
