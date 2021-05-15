@@ -9,6 +9,8 @@ du -h --max-depth=1 *
 # 查看centOS系统版本
 cat /etc/redhat-release
 
-
 # 批量安装RPM包
-ls *.rmp | xargs -n1 sudo rpm -ivh
+ls *.rpm | xargs -n1 sudo rpm -ivh
+
+# 文件查找
+find /opt/module -name 'my*'

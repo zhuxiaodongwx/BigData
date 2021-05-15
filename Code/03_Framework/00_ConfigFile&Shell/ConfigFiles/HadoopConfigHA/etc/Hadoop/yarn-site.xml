@@ -126,7 +126,4 @@
         <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
     </property>
 
-    <!--   YARN HA配置  end  -->
-
-
 </configuration>

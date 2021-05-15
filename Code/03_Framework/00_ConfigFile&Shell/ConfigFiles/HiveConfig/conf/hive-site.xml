@@ -54,6 +54,7 @@
     </property>
 
     <!--更换hive的计算引擎为tex-->
+    <!--
     <property>
         <name>hive.execution.engine</name>
         <value>tez</value>
@@ -62,6 +63,7 @@
         <name>hive.tez.container.size</name>
         <value>1024</value>
     </property>
+    -->
 
 
 </configuration>
