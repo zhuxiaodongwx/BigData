@@ -61,3 +61,52 @@ drop table student;
 alter table test set tblproperties ("EXTERNAL"="TRUE");
 -- 查看内部表外部表
 desc formatted test;
+
+
+-- 建立一张分区表
+create table stu_par
+(id int,name string)
+partitioned by (class string)
+row format delimited fields terminated by '\t';
+
+--向分区表中插入数据
+load data local inpath '/opt/module/datas/student.txt' into table stu_par
+partition (class = '01');
+load data local inpath '/opt/module/datas/student.txt' into table stu_par
+partition (class = '02');
+
+--分区查询
+select * from stu_par where  id = '1001';
+select * from stu_par where class='01' and id = '1001';
+
+-- 查看分区数量
+show partitions stu_par;
+
+-- 添加表分区
+alter table  stu_par add partition (class = '06') partition (class = '07');
+
+-- 删除表分区
+alter table stu_par drop partition (class = '06'), partition(class='07');
+
+-- 修复表分区
+msck repair table stu_par;
+-- 直接将数据load到进的分区
+load data local inpath '/opt/module/datas/student.txt' into table stu_par partition (class = '05');
+
+--建立一张带二级分区的表
+-- 建立一张分区表
+create table stu_par2
+(id int,name string)
+partitioned by (grade string,class string)
+row format delimited fields terminated by '\t';
+
+-- 查看分区数量
+show partitions stu_par2;
+-- 直接将数据load到进的分区
+load data local inpath '/opt/module/datas/student.txt' into table stu_par2 partition (grade ='01',class = '01');
+load data local inpath '/opt/module/datas/student.txt' into table stu_par2 partition (class = '02',grade ='02');
+
+--用查询结果建表
+create table stu_par4
+    as select * from stu_par;
+
