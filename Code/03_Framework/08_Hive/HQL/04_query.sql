@@ -84,3 +84,16 @@ select e.ename `员工名`,d.dname `部门名称`,l.loc_name `办公地点`
 from emp e
 inner join dept d on e.deptno = d.deptno
 inner join location l on d.loc = l.loc;
+
+-- 全局排序
+select * from emp order by sal desc;
+-- 全局排序,取前五
+select * from emp order by sal desc limit 5;
+-- 多条件排序
+select * from emp order by deptno desc, job desc;
+
+-- 按照两倍工资排序
+select ename, sal*2 twosal from emp order by twosal;
+
+-- 按照部分分区，按照薪资降序排列
+select * from xiaodong.emp distribute by deptno sort by sal desc;
