@@ -97,3 +97,14 @@ select ename, sal*2 twosal from emp order by twosal;
 
 -- 按照部分分区，按照薪资降序排列
 select * from xiaodong.emp distribute by deptno sort by sal desc;
+
+--创建分桶表
+create table stu_buck(id int, name string)
+clustered by(id)
+into 4 buckets
+row format delimited fields terminated by '\t';
+-- 表信息（分桶信息）
+ desc formatted stu_buck;
+-- 向分桶表插入数据
+load data local inpath '/opt/module/datas/student.txt' into table stu_buck;
+select * from stu_buck;
