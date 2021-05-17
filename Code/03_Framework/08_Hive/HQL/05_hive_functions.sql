@@ -69,3 +69,44 @@ from (select concat(constellation, ',', blood_type) base, name
       from person_info) t1
 group by t1.base;
 
+
+// ------------------------列转行----------------------------------
+-- 数据准备
+create table movie_info(
+    movie string,
+    category string)
+row format delimited fields terminated by "\t";
+load data local inpath "/opt/module/datas/movie.txt" into table movie_info;
+
+select * from movie_info;
+
+select explode(split(category, ','))
+from movie_info;
+
+desc function extended split;
+desc function extended explode;
+
+--将电影分类中的标签展开
+select movie, category_table.category_single
+from movie_info
+         lateral view explode(split(category, ',')) category_table as category_single;
+
+-- 根据标签类型，查询所有的电影
+select m.category_single, concat_ws(',', collect_set(movie))
+from (
+         select movie, category_table.category_single
+         from movie_info
+                  lateral view explode(split(category, ',')) category_table as category_single
+     ) m
+group by m.category_single
+;
+
+--
+explain select m.category_single, concat_ws(',', collect_set(movie))
+from (
+         select movie, category_table.category_single
+         from movie_info
+                  lateral view explode(split(category, ',')) category_table as category_single
+     ) m
+group by m.category_single
+;
