@@ -108,3 +108,8 @@ row format delimited fields terminated by '\t';
 -- 向分桶表插入数据
 load data local inpath '/opt/module/datas/student.txt' into table stu_buck;
 select * from stu_buck;
+
+
+-- 抽样查询
+select * from emp tablesample ( bucket 1 out of 4 on empno);
+select * from stu_buck tablesample ( bucket 1 out of 4 on id);
