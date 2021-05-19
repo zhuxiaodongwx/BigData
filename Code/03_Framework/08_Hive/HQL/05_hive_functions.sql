@@ -110,3 +110,44 @@ from (
      ) m
 group by m.category_single
 ;
+
+// ------------------------开窗函数---------------------------------
+-- 数据准备
+create table business(
+name string,
+orderdate string,
+cost int
+) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',';
+load data local inpath "/opt/module/datas/business.txt" into table business;
+
+select * from business;
+--（1）查询在2017年4月份购买过的顾客及总人数
+select name, count(*) over ()
+from business
+where substring(orderdate, 1, 7) = '2017-04'
+group by name;
+--（2）查询顾客的购买明细及月购买总额(所有客户的)
+select name,cost,orderdate,
+sum(cost)  over (partition by substring(orderdate, 1, 7)  )
+from business;
+--（3）上述的场景, 将每个顾客的cost按照日期进行累加
+select name,cost,orderdate,
+sum(cost)  over (partition by name order by orderdate rows between unbounded preceding and current row )
+from business;
+
+--(拓展)求明细，以及每个月，有哪些客户来过
+select name ,orderdate ,cost ,
+collect_set(name)
+     over (partition by substring(orderdate, 1, 7)  )
+from business;
+
+select name ,orderdate ,cost ,
+concat_ws("," , collect_set(name)
+over (partition by substring(orderdate, 1, 7)  ))
+from business;
+
+--（4）查看顾客上次的购买时间
+select name ,orderdate ,cost
+from business;
+--（5）查询前20%时间的订单信息
+
