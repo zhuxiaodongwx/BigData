@@ -147,7 +147,58 @@ over (partition by substring(orderdate, 1, 7)  ))
 from business;
 
 --（4）查看顾客上次的购买时间
-select name ,orderdate ,cost
+select name ,orderdate ,cost,
+       lag(orderdate,1,"1970-01-01") over (partition by name order by orderdate) lastorder
 from business;
+
 --（5）查询前20%时间的订单信息
+select name ,orderdate ,cost,
+       ntile(5) over (order by orderdate asc)
+from business;
+
+select *
+from (
+         select name,
+                orderdate,
+                cost,
+                ntile(5) over (order by orderdate asc) n
+         from business) t1
+where n = 1;
+
+// =========================排名================================
+create table score(
+name string,
+subject string,
+score int)
+row format delimited fields terminated by "\t";
+load data local inpath '/opt/module/datas/score.txt' into table score;
+
+select * from score;
+
+-- 计算每门学科成绩排名
+select *,
+       rank() over (partition by subject order by score desc) rank,
+       dense_rank() over (partition by subject order by score desc) dense_rank ,
+       row_number()  over (partition by subject order by score desc) row_number
+from score;
+
+-- 计算英语学科的成绩排名
+select name, subject, score,
+       rank() over (partition by subject order by score desc) rank,
+       dense_rank() over (partition by subject order by score desc) dense_rank ,
+       row_number()  over (partition by subject order by score desc) row_number
+from score where subject = "英语" ;
+
+
+// =========================时间计算================================
+-- 获取当前时间
+select current_date();
+
+-- 今天开始，90天后的时间
+select date_add(current_date(), 90);
+-- 今天开始，90天前的时间
+select date_sub(current_date(), 90);
+
+-- 计算两个日期之间的时间差
+select datediff("2021-05-20", "2021-08-15");
 
