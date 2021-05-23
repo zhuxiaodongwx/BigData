@@ -7,3 +7,6 @@ set hive.exec.mode.local.auto = true;
 set hive.exec.parallel=true;
 --同一个sql允许最大并行度，默认为8。
 set hive.exec.parallel.thread.number=16;
+
+
+ set io.sort.mb=30;
