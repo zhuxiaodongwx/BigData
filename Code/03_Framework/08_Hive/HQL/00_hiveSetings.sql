@@ -9,4 +9,4 @@ set hive.exec.parallel=true;
 set hive.exec.parallel.thread.number=16;
 
 
- set io.sort.mb=30;
+set io.sort.mb=30;
