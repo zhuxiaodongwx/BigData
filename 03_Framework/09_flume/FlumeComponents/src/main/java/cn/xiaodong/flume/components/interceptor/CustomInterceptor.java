@@ -9,6 +9,8 @@ import java.util.List;
 /**
  * Flume自定义拦截器
  * 判断字符串是否只含有数字
+ * 如果event中的内容，只含有数字，在header中，添加key="type"，value="number"的键值
+ * 如果event中的内容，不只含有数字，在header中，添加key="type"，value="else"的键值
  *
  * @author: xiaodong
  * @create: 2021-06-30 07:37

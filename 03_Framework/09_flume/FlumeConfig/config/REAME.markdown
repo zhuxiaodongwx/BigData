@@ -8,7 +8,3 @@
 |          | group2      | Flume多路复用              |
 |          | group3      | Flume负载均衡与故障转移    |
 |          | group4      | Flume聚合                  |
-| componts |             | Flume自定义组件            |
-|          | sink        | Flume自定义组件Sink        |
-|          | source      | Flume自定义组件Source      |
-|          | interceptor | Flume自定义组件Interceptor |
