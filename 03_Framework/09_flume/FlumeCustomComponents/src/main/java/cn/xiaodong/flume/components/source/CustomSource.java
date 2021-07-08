@@ -1,4 +1,4 @@
-package cn.xiaodong.flume.components.sink;
+package cn.xiaodong.flume.components.source;
 
 import org.apache.flume.Context;
 import org.apache.flume.Event;
@@ -53,14 +53,6 @@ public class CustomSource extends AbstractSource implements Configurable, Pollab
             listEvents.add(event);
         }
 
-//        // 读取5次数据，线程等待1秒
-//        try {
-//            Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//            // 进行异常处理
-//            status = Status.BACKOFF;
-//        }
-
         // 2.将读取到的数据，发送到channel Processor
         try {
             // 获取channel Processor
@@ -72,6 +64,7 @@ public class CustomSource extends AbstractSource implements Configurable, Pollab
             status = Status.BACKOFF;
         }
 
+        // 返回操作状态
         return status;
     }
 
